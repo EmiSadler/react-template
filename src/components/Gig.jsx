@@ -1,19 +1,24 @@
 import './Gig.css';
+import Button from './Button';
 
-function Gig() {
+const Gig = (props) => {
+  const handleClick = () => {
+    console.log(`clicked: ${props.band}`);
+  };
   return (
-    <div>
-      <h1>Event</h1>
+    <div className="gig">
+      <h1>{props.band}</h1>
       <img id="AlbumCover"
-        src="https://upload.wikimedia.org/wikipedia/en/5/5b/The_Decemberists_-_The_King_Is_Dead.jpg" alt="The Decemberists Album Cover: The King is Dead" />
+        src={props.image} alt={props.album} />
       <p id="Event">
-        A chill evening listening to The Decemberists with custom themed cocktails. </p>
+        {props.description}</p>
       <p id="Date">
-        31 May 2025</p>
-      <p id="Location">
-        Somewhere cozy with a fire</p>
-    </div>
-  );
-}
+        {props.date}</p>
+      <p id ="Location">
+        {props.location}</p>
+      <Button onClick={handleClick} label="Buy Tickets"/>
+    </div> 
+  )
+};
 
 export default Gig
