@@ -1,7 +1,7 @@
 
 
 const Button = ({ onClick, label}) => {
-  return <button id="button" onClick={onClick}>{label}</button>;
+  return <button className="BuyTickets" onClick={onClick}>{label}</button>;
 };
 
 export default Button;

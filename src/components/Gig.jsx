@@ -1,5 +1,6 @@
 import './Gig.css';
 import Button from './Button';
+import AnimatedButton from './LikeButton';
 
 const Gig = (props) => {
   const handleClick = () => {
@@ -7,14 +8,15 @@ const Gig = (props) => {
   };
   return (
     <div className="gig">
+      <AnimatedButton />
       <h1>{props.band}</h1>
-      <img id="AlbumCover"
+      <img className="AlbumCover"
         src={props.image} alt={props.album} />
-      <p id="Event">
+      <p className="Event">
         {props.description}</p>
-      <p id="Date">
+      <p className="Date">
         {props.date}</p>
-      <p id ="Location">
+      <p  className="Location">
         {props.location}</p>
       <Button onClick={handleClick} label="Buy Tickets"/>
     </div> 
